@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Reviews</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <section>
+    <div>
+      <div class="background py-2 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="">
+              <div class="row g-0">
+                <div class="col-md-12 col-lg-6 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <nav class="navbar sticky-navbar" id="navbar">
+    <div class="container">
+      <img src="./logo-sm.png" class="logo" alt="">
+      <h1 class="navbar-brand">GAME REVIEWS</h1>
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li onclick="filterGames('MMORPG')" class="active">MMORPG</li>
+        <li onclick="filterGames('Shooter')">Shooter</li>
+        <li onclick="filterGames('Strategy')">Strategy</li>
+        <li onclick="filterGames('Action RPG')">Action</li>
+        <li onclick="filterGames('Battle Royale')">Battle</li>
+        <li onclick="filterGames('ARPG')">ARPG</li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div id="game-container" class="game-container"></div>
+  </main>
+  <section id="game-detail-section" class="hidden">
+    <div class="game-details">
+      <div class="game-image">
+        <img id="game-image" src="" alt="Game Image" />
+      </div>
+      <div class="game-info">
+        <h2 id="game-title"></h2>
+        <p id="game-description"></p>
+        <span id="game-genre"></span>
+        <span id="game-platform"></span>
+        <div id="game-rating">Rating: <span id="rating-value"></span></div>
+        <a id="game-link" target="_blank"><button>Play Now</button></a>
+        <button onclick="closeGameDetails()">Close</button>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="./script/bootstrap.bundle.min.js"></script>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>

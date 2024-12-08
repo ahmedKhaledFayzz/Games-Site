@@ -1,0 +1,341 @@
+/* إعدادات عامة */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #272b30;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  background-image: url("./wraper.png");
+  background-size: contain;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Include the custom scrollbar styles here */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bdb5b5;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d19797;
+}
+
+.row {
+  margin-right: 0px;
+}
+
+/* تصميم شريط التنقل */
+/* جعل الـ navbar مرنًا */
+.navbar {
+  display: flex;
+  height: 60px;
+  position: relative;
+  top: 0px;
+  left: 10%;
+  right: 0px;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a497b;
+  color: white;
+  padding: 0px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border: #3a497b 2px solid;
+  border-radius: 20px;
+}
+.active {
+  color: #0395c8; /* تغيير اللون عند التفاعل (اختياري) */
+}
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* تغيير مؤشر الماوس إلى يد عند التحرك فوق الفئات */
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #0395c8; /* تغيير اللون عند التفاعل (اختياري) */
+}
+
+.logo {
+  display: flex;
+  width: 50px;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 200;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+/* عرض أيقونة الهامبورغر في الشاشات الصغيرة */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+.navbar > .container,
+.navbar > .container-fluid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+/* Media Queries - شاشات صغيرة */
+@media screen and (max-width: 870px) {
+  .navbar {
+    width: 95%;
+    left: 2.5%;
+    right: 2.5%;
+    border: #3a497b 2px solid;
+    border-radius: 20px;
+    padding: 0px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  .nav-links {
+    color: white;
+    display: none; /* إخفاء الروابط على الشاشات الصغيرة */
+    flex-direction: column;
+    width: 100%;
+    background-color: #3a497b;
+    position: absolute;
+    top: 57px; /* المكان أسفل شريط التنقل */
+    left: 0;
+    padding: 24px;
+    gap: 10px;
+    border-radius: 0% 0% 5% 5%;
+  }
+  .navbar > .container,
+  .navbar > .container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    width: 40px;
+    padding: 0px;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+/* تصميم الحاوية الرئيسية */
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* تصميم بطاقة اللعبة */
+.game-card {
+  background-color: #272b30;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.game-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ecf0f1;
+}
+
+.game-card p {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.game-card span {
+  display: block;
+  margin: 5px 0;
+  background-color: #34495e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+/* قسم تفاصيل اللعبة */
+/* المظهر العام للقسم */
+#game-detail-section {
+  display: none; /* إخفاء القسم افتراضيًا */
+  background-color: #27282b;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* وضع عرض المحتوى باستخدام Flexbox */
+.game-details {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.game-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.game-info h2 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.game-info p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.game-info span {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+#game-rating {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #ff9900;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #272b30;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3c3f42;
+}
+
+/* إعدادات responsive */
+@media (min-width: 768px) {
+  .game-details {
+    flex-direction: row; /* ترتيب العناصر أفقيًا */
+    justify-content: space-between;
+  }
+
+  .game-image {
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .game-info {
+    flex: 2;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .game-info h2 {
+    font-size: 2rem;
+  }
+
+  .game-info p {
+    font-size: 1.1rem;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-info {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
